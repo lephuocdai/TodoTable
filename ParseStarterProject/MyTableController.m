@@ -21,6 +21,9 @@
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"text";
         
+        // The title for this table in the Navigation Controller.
+        self.title = @"Todos";
+        
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
         
