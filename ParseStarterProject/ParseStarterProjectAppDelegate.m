@@ -9,26 +9,18 @@
 {
     // ****************************************************************************
     // Uncomment and fill in with your Parse credentials:
-    [Parse setApplicationId:@"APPLICATION_ID_HERE" clientKey:@"CLIENT_KEY_HERE"];
+    [Parse setApplicationId:@"QY4YZDuQgXJ4ODteV90lwGoME3osVD73d1NBUJ59" clientKey:@"I3SEbS8xjwKeBSp7CzdlOSKSXI3uVn8hR8rWStTB"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     // Override point for customization after application launch.
 
     MyTableController *controller = [[MyTableController alloc] init];
+    
+//    PFQueryTableViewController *controller = [[PFQueryTableViewController alloc] initWithClassName:@"Todo"];
   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
     [self.window makeKeyAndVisible];
-    
-    // Let's make an object each launch, so there's definitely something to display.
-    
-    PFObject *object = [PFObject objectWithClassName:@"Todo"];
-    [object setObject:@"Sample Text" forKey:@"text"];
-    [object setObject:@1 forKey:@"priority"];
-    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        // Refresh the table when the object is done saving.
-        [controller loadObjects];
-    }];
   
     return YES;
 }
